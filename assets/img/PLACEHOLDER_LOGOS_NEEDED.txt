@@ -1,0 +1,7 @@
+Place your logo files here:
+- logo.svg        (dark/color logo, used in header on light background)
+- logo_white.svg  (white logo, used in footer on dark background)
+
+Referenced in every HTML page as:
+  ../assets/img/logo.svg
+  ../assets/img/logo_white.svg
