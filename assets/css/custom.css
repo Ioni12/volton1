@@ -1,89 +1,123 @@
 ﻿:root {
-    --color-primary: #76a346;
+  --color-primary: #76a346;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .row > * {
-    padding-right: calc(var(--bs-gutter-x) * 1.2) !important;
-    padding-left: calc(var(--bs-gutter-x) * 1.2) !important;
+  padding-right: calc(var(--bs-gutter-x) * 1.2) !important;
+  padding-left: calc(var(--bs-gutter-x) * 1.2) !important;
 }
 
 .accordion-solar-faq {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 .brand-area-h2 img {
-    max-width: 150px;
+  max-width: 150px;
 }
 
 .progress-wrap {
-    right: 90px;
-    bottom: 15px;
+  right: 90px;
+  bottom: 15px;
 }
 
 @media only screen and (max-width: 767px) {
-    .thumbanil-about-four .small-bottom-right {
-        top: 20px;
-        left: 20px;
-    }
+  .thumbanil-about-four .small-bottom-right {
+    top: 20px;
+    left: 20px;
+  }
 
-    .btn-phone {
-        display: none;
-    }
+  .btn-phone {
+    display: none;
+  }
 
-    .brand-area-h2 {
-        gap: 0;
-    }
+  .brand-area-h2 {
+    gap: 0;
+  }
 
-    .brand-area-h2 img {
-        max-width: 130px !important;
-    }
+  .brand-area-h2 img {
+    max-width: 130px !important;
+  }
 
-    .copyright-area-one .left {
-        margin-bottom: 20px;
-    }
+  .copyright-area-one .left {
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (max-width: 1399px) {
-    .thumbanil-about-four .small-bottom-right {
-        width: 70%;
-        right: 20px;
-    }
+  .thumbanil-about-four .small-bottom-right {
+    width: 70%;
+    right: 20px;
+  }
 }
 
 .btn-primary {
-    color: #76a346;
+  color: #76a346;
 }
 
 .nav-link {
-    color: #76a346;
+  color: #76a346;
 }
 
-.nav-link:focus, .nav-link:hover {
-    color: #76a346;
+.nav-link:focus,
+.nav-link:hover {
+  color: #76a346;
 }
 
 .single-solari-service-start .icon-area {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .border-radius-4 {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
 .rts-btn {
-    padding: 19px 30px;
+  padding: 19px 30px;
 }
 
 .main-nav-one ul li.has-dropdown a.nav-link {
-    padding: 19px 5px !important;
+  padding: 19px 5px !important;
 }
 
 .privacy .banner_bg-four {
-    height: 100px;
+  height: 100px;
+}
+
+/* ─── FAQ accordion "+" icon (match volton.al style) ─────────────────────── */
+
+.accordion-solar-faq .accordion-button {
+  border: none;
+  box-shadow: none;
+  position: relative;
+}
+
+.accordion-solar-faq .accordion-button::after {
+  background-image: none !important;
+  content: "+";
+  font-family: "fontAwesome";
+  transform: none;
+  position: absolute;
+  right: 22px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #4aab3d1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.accordion-solar-faq .accordion-button[aria-expanded="true"]::after {
+  content: "\2212"; /* minus sign */
+  background: var(--color-primary);
+  color: #fff;
 }
 
 /* ─── Dropdown chevron arrow ─────────────────────────────────────────────── */
@@ -94,163 +128,220 @@
 .onepage .main-nav-one ul li.has-dropdown > a::before,
 .onepage .main-nav-one ul li.has-dropdown a::before,
 .main-nav-one ul li.has-dropdown:hover a.nav-link::before {
-    display: none !important;
-    content: "" !important;
-    font-family: none !important;
+  display: none !important;
+  content: "" !important;
+  font-family: none !important;
 }
 
 /* The inline SVG chevron we insert into each dropdown trigger */
 .nav-chevron {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin-left: 4px;
-    vertical-align: middle;
-    transition: transform 0.25s ease;
-    position: relative;
-    top: -1px;
-    flex-shrink: 0;
-    stroke: currentColor;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  vertical-align: middle;
+  transition: transform 0.25s ease;
+  position: relative;
+  top: -1px;
+  flex-shrink: 0;
+  stroke: currentColor;
 }
 
 /* Rotate chevron when dropdown is open */
 .main-nav-one ul li.has-dropdown:hover .nav-chevron {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Keep the dropdown trigger on one line */
 .main-nav-one ul li.has-dropdown > a.nav-link {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 4px;
-    white-space: nowrap;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px;
+  white-space: nowrap;
 }
 
 /* Wider submenu for the More dropdown */
 .main-nav-one ul li.has-dropdown .submenu {
-    min-width: 185px;
+  min-width: 185px;
 }
 
 /* Language switcher submenu stays compact */
 .main-nav-one ul li.has-dropdown:last-child .submenu {
-    min-width: 80px;
+  min-width: 80px;
 }
 
 .right {
-    align-self: center;
+  align-self: center;
 }
 
 .header--sticky.sticky {
-    padding: 15px 40px;
+  padding: 15px 40px;
+}
+
+/* ─── Laptop-width nav fix ─────────────────────────────────────────────────
+   The theme's desktop nav only switches to the mobile hamburger menu below
+   992px, but never compresses itself between 992px and ~1300px — a very
+   common laptop viewport range. With 6 nav items + a language dropdown +
+   logo + phone button all fighting for space, this gap causes the nav to
+   wrap onto a second line instead of shrinking to fit one line. */
+@media only screen and (min-width: 992px) and (max-width: 1300px) {
+  header.header-four {
+    padding: 20px 20px;
+  }
+  .main-nav-one ul li a.nav-link {
+    margin: 0 4px !important;
+    font-size: 14px;
+    padding: 19px 4px !important;
+  }
+  .main-nav-one ul li.has-dropdown a.nav-link {
+    padding: 19px 4px !important;
+  }
+  .main-nav-one ul li.has-dropdown {
+    margin-left: 6px !important;
+    margin-right: 0 !important;
+  }
+  .header-right .action-button-menu .btn-phone {
+    display: none;
+  }
+}
+
+/* ─── Footer tablet wrap fix ────────────────────────────────────────────────
+   Below 1199px the theme sets flex-wrap: wrap on the footer's column
+   wrapper, but never adjusts flex-basis until 767px — so between 768px and
+   1199px, each of the 3 footer columns still claims only 20% width while
+   wrapping onto new lines, producing narrow, cramped columns instead of a
+   clean 2-column (or full-width) tablet layout. */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .single-footer-one-wrapper {
+    gap: 40px 60px;
+  }
+  .single-footer-one-wrapper .single-footer-component {
+    flex-basis: calc(50% - 30px);
+  }
+  .single-footer-one-wrapper .single-footer-component.first {
+    flex-basis: 100%;
+  }
 }
 
 .copyright-area-one .right ul {
-    gap: 30px;
+  gap: 30px;
 }
 
 /* ─── LINE Seed Sans font ─────────────────────────────────────────────────── */
 @font-face {
-    font-family: 'LINESeedSans';
-    src: url('../fonts/LINESeedSans_Th-BF66398877123d7.otf') format('opentype');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-family: "LINESeedSans";
+  src: url("../fonts/LINESeedSans_Th-BF66398877123d7.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'LINESeedSans';
-    src: url('../fonts/LINESeedSans_Rg-BF66398876eda0e.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "LINESeedSans";
+  src: url("../fonts/LINESeedSans_Rg-BF66398876eda0e.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'LINESeedSans';
-    src: url('../fonts/LINESeedSans_Bd-BF6639887705a37.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: "LINESeedSans";
+  src: url("../fonts/LINESeedSans_Bd-BF6639887705a37.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'LINESeedSans';
-    src: url('../fonts/LINESeedSans_XBd-BF66398876bd5bb.otf') format('opentype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
+  font-family: "LINESeedSans";
+  src: url("../fonts/LINESeedSans_XBd-BF66398876bd5bb.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'LINESeedSans';
-    src: url('../fonts/LINESeedSans_He-BF66398876eebe5.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "LINESeedSans";
+  src: url("../fonts/LINESeedSans_He-BF66398876eebe5.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Apply sitewide — exclude pseudo-elements so FontAwesome icons still work */
 body,
-h1, h2, h3, h4, h5, h6,
-p, a, li, span, label,
-input, textarea, select, button {
-    font-family: 'LINESeedSans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+span,
+label,
+input,
+textarea,
+select,
+button {
+  font-family: "LINESeedSans", sans-serif;
 }
 
 .bg-breadcrumb5 {
-    background-image: url(https://hermex-dev.s3.eu-central-1.amazonaws.com/e8044df0-defc-4048-b014-fad07dcbd072/2025/08/0debfd3629a94bb58dbfadc331b01cb1.webp);
-    background-size: cover;
-    background-position: center;
+  background-image: url(https://hermex-dev.s3.eu-central-1.amazonaws.com/e8044df0-defc-4048-b014-fad07dcbd072/2025/08/0debfd3629a94bb58dbfadc331b01cb1.webp);
+  background-size: cover;
+  background-position: center;
 }
 
 .rts-bread-crumb-area {
-    position: relative;
+  position: relative;
 }
 
 .rts-bread-crumb-area .con-tent-main .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .rts-bread-crumb-area .bg-text-stok {
-    font-size: 80px;
-    font-weight: 800;
-    color: rgba(255,255,255,0.08);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    pointer-events: none;
+  font-size: 80px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.08);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .rts-bread-crumb-area .title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
-    margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
 }
 
 .rts-bread-crumb-area .title a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .rts-bread-crumb-area .slug {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .rts-bread-crumb-area .slug a {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .rts-bread-crumb-area .slug a.active {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
