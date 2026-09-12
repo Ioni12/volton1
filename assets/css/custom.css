@@ -2,6 +2,33 @@
   --color-primary: #76a346;
 }
 
+/* ─── Font Awesome Free compatibility fix ───────────────────────────────────
+   The theme's core style.css hardcodes font-family: "Font Awesome 6 Pro" on
+   a few CSS-generated icons (::after pseudo-elements), and sets font-weight
+   400 (regular) for glyphs that only exist in the free tier's solid (900)
+   weight. Since this site uses Font Awesome Free, not Pro, those rules
+   pointed at a font that was never loaded — showing a broken glyph box
+   instead of the intended chevron icon. This override corrects the
+   font-family name and weight without touching the vendor stylesheet. */
+.mobile-menu-main nav ul li.has-droupdown::after,
+.header-one
+  .main-nav-desk
+  nav
+  ul
+  li.has-droupdown
+  .submenu.inner-page
+  .sub-dropdown::after,
+.header-three
+  .main-nav-desk
+  nav
+  ul
+  li.has-droupdown
+  .submenu.inner-page
+  .sub-dropdown::after {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -184,23 +211,45 @@
    common laptop viewport range. With 6 nav items + a language dropdown +
    logo + phone button all fighting for space, this gap causes the nav to
    wrap onto a second line instead of shrinking to fit one line. */
-@media only screen and (min-width: 992px) and (max-width: 1300px) {
+@media only screen and (min-width: 992px) and (max-width: 1500px) {
   header.header-four {
     padding: 20px 20px;
   }
   .main-nav-one ul li a.nav-link {
-    margin: 0 4px !important;
-    font-size: 14px;
-    padding: 19px 4px !important;
+    margin: 0 3px !important;
+    font-size: 13px;
+    padding: 19px 3px !important;
   }
   .main-nav-one ul li.has-dropdown a.nav-link {
-    padding: 19px 4px !important;
+    padding: 19px 3px !important;
   }
   .main-nav-one ul li.has-dropdown {
-    margin-left: 6px !important;
+    margin-left: 4px !important;
     margin-right: 0 !important;
   }
   .header-right .action-button-menu .btn-phone {
+    padding: 12px 18px !important;
+    font-size: 13px !important;
+  }
+  .header-right .action-button-menu #menu-btn {
+    margin-left: 12px;
+  }
+}
+
+/* At the tightest end of the laptop range, shrink the phone button to just
+   the icon (no number text) so it still fits without needing to be hidden
+   entirely. Wider laptop screens (1200px+) keep the full button with text. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .header-right .action-button-menu .btn-phone {
+    padding: 12px 14px !important;
+    width: 44px;
+    height: 44px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .header-right .action-button-menu .btn-phone .phone-label {
     display: none;
   }
 }
@@ -225,6 +274,44 @@
 
 .copyright-area-one .right ul {
   gap: 30px;
+}
+
+/* ─── Footer legal-links row wrap fix ──────────────────────────────────────
+   The theme's copyright bar has 7 legal links in a single flex row with no
+   wrapping and no responsive breakpoint below 575px. On any narrower or
+   mid-width screen the links either overflow past the container edge or
+   wrap unevenly. This lets the row wrap cleanly and stacks the copyright
+   text above the links once things get tight. */
+.copyright-area-one {
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+.copyright-area-one .right ul {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 12px;
+}
+@media only screen and (max-width: 991px) {
+  .copyright-area-one {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .copyright-area-one .left {
+    margin-bottom: 12px;
+  }
+  .copyright-area-one .right ul {
+    justify-content: center;
+    gap: 12px 24px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .copyright-area-one .right ul {
+    gap: 10px 16px;
+  }
+  .copyright-area-one .right ul li a {
+    font-size: 13px;
+  }
 }
 
 /* ─── LINE Seed Sans font ─────────────────────────────────────────────────── */
