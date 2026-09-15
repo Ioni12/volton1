@@ -98,6 +98,27 @@
   margin-bottom: 50px;
 }
 
+/* ─── Service cards: align "Learn More" to the bottom ─────────────────────
+   Card copy length varies (e.g. Indexed-Price vs the other two), so without
+   this the read-more-btn sits at different heights per card instead of a
+   clean shared baseline. Making the card a column flex container and
+   pushing the link down with margin-top: auto fixes that regardless of how
+   much text a given card has, and regardless of row/column height set
+   elsewhere by the theme. */
+.rts-service-area-height-solari .single-solari-service-start {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rts-service-area-height-solari .single-solari-service-start .read-more-btn {
+  margin-top: auto;
+}
+
+.rts-service-area-height-solari .row.g-24 > [class*="col-"] {
+  display: flex;
+}
+
 .border-radius-4 {
   border-radius: 4px;
 }
